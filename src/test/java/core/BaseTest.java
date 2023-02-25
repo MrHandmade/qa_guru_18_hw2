@@ -5,6 +5,7 @@ import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeAll;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class BaseTest {
     @BeforeAll
@@ -15,9 +16,12 @@ public class BaseTest {
         Configuration.headless = false;
         Configuration.savePageSource = false;
         baseUrl = "https://demoqa.com/";
-
+        Configuration.holdBrowserOpen = true;
 
         Selenide.open(baseUrl + "automation-practice-form");
+
+        executeJavaScript("$('footer').remove()");
+        executeJavaScript("$('#fixedban').remove()");
     }
 
 }
