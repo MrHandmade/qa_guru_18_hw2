@@ -16,7 +16,7 @@ public class BaseTest {
         Configuration.headless = false;
         Configuration.savePageSource = false;
         baseUrl = "https://demoqa.com/";
-        Configuration.holdBrowserOpen = true;
+        Configuration.holdBrowserOpen = false;
 
         Selenide.open(baseUrl + "automation-practice-form");
 
